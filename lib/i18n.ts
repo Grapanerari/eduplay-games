@@ -109,22 +109,6 @@ export const translations = {
     purchased: "Acheté",
     of: "de",
     backHome: "Retour à l'Accueil",
-
-    // Notifications
-    notifications_enabled: "Notifications Activées",
-    new_quiz_notifications: "Nouveaux Quiz",
-    new_quiz_desc: "Recevez des alertes sur les nouveaux quiz",
-    new_challenge_notifications: "Nouveaux Défis",
-    new_challenge_desc: "Recevez des alertes sur les nouveaux défis",
-    achievement_notifications: "Réalisations",
-    achievement_desc: "Notifications quand vous débloquez des réalisations",
-    daily_reminder: "Rappel Quotidien",
-    daily_reminder_desc: "Rappel pour jouer tous les jours",
-    update_notifications: "Mises à Jour",
-    update_desc: "Notifications sur les nouvelles versions",
-    special_events: "Événements Spéciaux",
-    special_events_desc: "Alertes sur les événements et promotions",
-    notifications_info: "Vous pouvez gérer vos préférences de notification à tout moment",
   },
 
   pt: {
@@ -235,22 +219,6 @@ export const translations = {
     purchased: "Comprado",
     of: "de",
     backHome: "Voltar ao Início",
-
-    // Notifications
-    notifications_enabled: "Notificações Ativadas",
-    new_quiz_notifications: "Novos Quiz",
-    new_quiz_desc: "Receba alertas sobre novos quiz",
-    new_challenge_notifications: "Novos Desafios",
-    new_challenge_desc: "Receba alertas sobre novos desafios",
-    achievement_notifications: "Realizações",
-    achievement_desc: "Notificações quando desbloqueia realizações",
-    daily_reminder: "Lembrete Diário",
-    daily_reminder_desc: "Lembrete para jogar todos os dias",
-    update_notifications: "Atualizações",
-    update_desc: "Notificações sobre novas versões",
-    special_events: "Eventos Especiais",
-    special_events_desc: "Alertas sobre eventos e promoções",
-    notifications_info: "Você pode gerenciar suas preferências de notificação a qualquer momento",
   },
 };
 
