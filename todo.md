@@ -199,3 +199,18 @@
 - [ ] Implémenter partage Plateforme
 - [ ] Implémenter partage Logique
 - [ ] Tester partage sur WhatsApp, Facebook, Twitter
+
+
+## Système de Notifications Push
+- [x] Configurer expo-notifications
+- [x] Créer le gestionnaire de notifications
+- [x] Implémenter l'enregistrement des tokens push
+- [x] Créer les templates de notifications
+- [x] Ajouter les préférences de notifications
+- [x] Implémenter les notifications de nouveaux quiz
+- [x] Ajouter les notifications de mises à jour
+- [x] Créer un système de relance pour utilisateurs inactifs
+- [x] Créer le composant d'interface pour gérer les préférences
+- [x] Ajouter les traductions FR/PT pour notifications
+- [ ] Tester les notifications sur Android et iOS
+- [ ] Intégrer avec le backend pour envoi de notifications
