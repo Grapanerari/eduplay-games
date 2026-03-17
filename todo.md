@@ -158,6 +158,9 @@
 - [x] Ajouter le suivi des power-ups achetés
 - [x] Créer un hook d'analytics pour les jeux
 - [x] Ajouter l'export de données d'analytics
-- [ ] Intégrer analytics dans tous les modules de jeu
+- [x] Intégrer analytics dans Quiz
+- [x] Intégrer analytics dans Math
+- [x] Intégrer analytics dans Platform
+- [x] Intégrer analytics dans Logic
 - [ ] Implémenter la segmentation des utilisateurs
 - [ ] Créer des alertes de performance

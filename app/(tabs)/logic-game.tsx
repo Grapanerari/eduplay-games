@@ -7,11 +7,13 @@ import { ProgressBar } from "@/components/progress-bar";
 import { getRandomPuzzles, type LogicPuzzle } from "@/data/logic-data";
 import { useGame } from "@/lib/game-context";
 import { useSoundEffects } from "@/components/sound-effects";
+import { useGameAnalytics } from "@/hooks/use-game-analytics";
 
 export default function LogicGameScreen() {
   const router = useRouter();
   const { addPoints, updateLogicScore } = useGame();
   const { playSuccessFeedback, playErrorFeedback } = useSoundEffects();
+  const { trackGameCompleted } = useGameAnalytics("logic");
 
   const [puzzles, setPuzzles] = useState<LogicPuzzle[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,6 +22,7 @@ export default function LogicGameScreen() {
   const [score, setScore] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
   const [hintUsed, setHintUsed] = useState(false);
+  const [gameStartTime] = useState(Date.now());
 
   useEffect(() => {
     const probs = getRandomPuzzles(10);
@@ -63,8 +66,10 @@ export default function LogicGameScreen() {
 
   const finishGame = () => {
     const finalScore = isCorrect && !isSubmitted ? score + 10 : score;
+    const duration = Math.round((Date.now() - gameStartTime) / 1000);
     addPoints(finalScore);
     updateLogicScore(finalScore);
+    trackGameCompleted(finalScore, duration);
     setGameFinished(true);
   };
 

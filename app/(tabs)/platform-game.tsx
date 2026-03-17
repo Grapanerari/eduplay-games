@@ -6,16 +6,19 @@ import { ScreenContainer } from "@/components/screen-container";
 import { ProgressBar } from "@/components/progress-bar";
 import { useGame } from "@/lib/game-context";
 import { useSoundEffects } from "@/components/sound-effects";
+import { useGameAnalytics } from "@/hooks/use-game-analytics";
 
 export default function PlatformGameScreen() {
   const router = useRouter();
   const { addPoints, updatePlatformScore } = useGame();
   const { playClickFeedback } = useSoundEffects();
+  const { trackGameCompleted } = useGameAnalytics("platform");
 
   const [score, setScore] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
   const [timeLeft, setTimeLeft] = useState(60);
   const [coinsCollected, setCoinsCollected] = useState(0);
+  const [gameStartTime] = useState(Date.now());
 
   useEffect(() => {
     if (timeLeft <= 0) {
@@ -37,8 +40,10 @@ export default function PlatformGameScreen() {
   };
 
   const finishGame = () => {
+    const duration = Math.round((Date.now() - gameStartTime) / 1000);
     addPoints(score);
     updatePlatformScore(score);
+    trackGameCompleted(score, duration);
     setGameFinished(true);
   };
 

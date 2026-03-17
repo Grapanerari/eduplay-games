@@ -7,11 +7,13 @@ import { ProgressBar } from "@/components/progress-bar";
 import { getRandomMathProblems, type MathProblem } from "@/data/math-data";
 import { useGame } from "@/lib/game-context";
 import { useSoundEffects } from "@/components/sound-effects";
+import { useGameAnalytics } from "@/hooks/use-game-analytics";
 
 export default function MathGameScreen() {
   const router = useRouter();
   const { addPoints, updateMathScore } = useGame();
   const { playSuccessFeedback, playErrorFeedback } = useSoundEffects();
+  const { trackGameCompleted } = useGameAnalytics("math");
 
   const [problems, setProblems] = useState<MathProblem[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,6 +22,7 @@ export default function MathGameScreen() {
   const [score, setScore] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
   const [timeLeft, setTimeLeft] = useState(0);
+  const [gameStartTime] = useState(Date.now());
 
   useEffect(() => {
     const probs = getRandomMathProblems(10);
@@ -81,8 +84,10 @@ export default function MathGameScreen() {
 
   const finishGame = () => {
     const finalScore = isCorrect && !isSubmitted ? score + 10 : score;
+    const duration = Math.round((Date.now() - gameStartTime) / 1000);
     addPoints(finalScore);
     updateMathScore(finalScore);
+    trackGameCompleted(finalScore, duration);
     setGameFinished(true);
   };
 
