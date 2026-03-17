@@ -131,3 +131,16 @@
 - [ ] Améliorer les transitions entre écrans
 - [ ] Ajouter des badges et récompenses visuelles
 - [ ] Créer des écrans de résultats plus spectaculaires
+
+
+## Système de Monétisation Hybride
+- [x] Créer le système d'abonnement Premium
+- [x] Implémenter les achats In-App (power-ups)
+- [x] Créer l'écran de paywall
+- [x] Ajouter les limites de tentatives pour utilisateurs gratuits
+- [x] Implémenter la persistance des abonnements
+- [x] Créer la boutique de power-ups
+- [x] Ajouter les composants de compteur de tentatives
+- [ ] Intégrer Google AdMob (bannières et récompensées)
+- [ ] Tester les transactions
+- [ ] Configurer les analytics de monétisation
