@@ -8,11 +8,13 @@ import { ProgressBar } from "@/components/progress-bar";
 import { getRandomQuizzes, type QuizQuestion } from "@/data/quiz-data";
 import { useGame } from "@/lib/game-context";
 import { useSoundEffects } from "@/components/sound-effects";
+import { useGameAnalytics } from "@/hooks/use-game-analytics";
 
 export default function QuizGameScreen() {
   const router = useRouter();
   const { addPoints, updateQuizScore } = useGame();
   const { playSuccessFeedback, playErrorFeedback } = useSoundEffects();
+  const { trackGameCompleted } = useGameAnalytics("quiz");
 
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,6 +22,7 @@ export default function QuizGameScreen() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
+  const [gameStartTime] = useState(Date.now());
 
   useEffect(() => {
     const quizzes = getRandomQuizzes(10);
@@ -67,8 +70,10 @@ export default function QuizGameScreen() {
 
   const finishGame = () => {
     const finalScore = isCorrect && !isSubmitted ? score + 10 : score;
+    const duration = Math.round((Date.now() - gameStartTime) / 1000);
     addPoints(finalScore);
     updateQuizScore(finalScore);
+    trackGameCompleted(finalScore, duration);
     setGameFinished(true);
   };
 

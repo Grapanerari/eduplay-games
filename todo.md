@@ -146,3 +146,18 @@
 - [ ] Intégrer Google AdMob (bannières et récompensées)
 - [ ] Tester les transactions
 - [ ] Configurer les analytics de monétisation
+
+
+## Système d'Analytics & Optimisation de Monétisation
+- [x] Créer le système d'analytics pour tracker les événements
+- [x] Implémenter le suivi des conversions Premium
+- [x] Créer le dashboard d'analytics
+- [x] Ajouter le suivi des tentatives quotidiennes
+- [x] Implémenter le funnel de monétisation
+- [x] Créer des rapports de comportement utilisateur
+- [x] Ajouter le suivi des power-ups achetés
+- [x] Créer un hook d'analytics pour les jeux
+- [x] Ajouter l'export de données d'analytics
+- [ ] Intégrer analytics dans tous les modules de jeu
+- [ ] Implémenter la segmentation des utilisateurs
+- [ ] Créer des alertes de performance
