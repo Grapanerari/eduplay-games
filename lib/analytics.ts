@@ -4,6 +4,7 @@ export type EventType =
   | "game_started"
   | "game_completed"
   | "game_failed"
+  | "game_shared"
   | "premium_upgrade"
   | "power_up_purchased"
   | "paywall_shown"

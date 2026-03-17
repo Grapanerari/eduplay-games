@@ -83,3 +83,9 @@ export function getRandomQuizzes(count: number): QuizQuestion[] {
   const shuffled = [...quizQuestions].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, Math.min(count, quizQuestions.length));
 }
+
+export function getRandomQuestions(count: number): QuizQuestion[] {
+  return getRandomQuizzes(count);
+}
+
+export type Question = QuizQuestion;

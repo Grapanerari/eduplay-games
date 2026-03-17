@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { analyticsManager } from "@/lib/analytics";
+import { analyticsManager, type EventType } from "@/lib/analytics";
 
 export function useGameAnalytics(gameType: "quiz" | "math" | "platform" | "logic") {
   useEffect(() => {
@@ -41,6 +41,10 @@ export function useGameAnalytics(gameType: "quiz" | "math" | "platform" | "logic
     analyticsManager.trackEvent("premium_upgrade");
   };
 
+  const trackEvent = (eventName: EventType, metadata?: Record<string, any>) => {
+    analyticsManager.trackEvent(eventName, { gameType, ...metadata });
+  };
+
   return {
     trackGameCompleted,
     trackGameFailed,
@@ -48,5 +52,6 @@ export function useGameAnalytics(gameType: "quiz" | "math" | "platform" | "logic
     trackPaywallConverted,
     trackPowerUpPurchased,
     trackPremiumUpgrade,
+    trackEvent,
   };
 }

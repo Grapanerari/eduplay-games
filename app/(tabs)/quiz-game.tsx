@@ -3,12 +3,12 @@ import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 
 import { ScreenContainer } from "@/components/screen-container";
-import { AnswerButton } from "@/components/answer-button";
 import { ProgressBar } from "@/components/progress-bar";
-import { getRandomQuizzes, type QuizQuestion } from "@/data/quiz-data";
+import { getRandomQuestions, type Question } from "@/data/quiz-data";
 import { useGame } from "@/lib/game-context";
 import { useSoundEffects } from "@/components/sound-effects";
 import { useGameAnalytics } from "@/hooks/use-game-analytics";
+import { ShareOptions } from "@/components/share-button";
 
 export default function QuizGameScreen() {
   const router = useRouter();
@@ -16,7 +16,7 @@ export default function QuizGameScreen() {
   const { playSuccessFeedback, playErrorFeedback } = useSoundEffects();
   const { trackGameCompleted } = useGameAnalytics("quiz");
 
-  const [questions, setQuestions] = useState<QuizQuestion[]>([]);
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -25,7 +25,7 @@ export default function QuizGameScreen() {
   const [gameStartTime] = useState(Date.now());
 
   useEffect(() => {
-    const quizzes = getRandomQuizzes(10);
+    const quizzes = getRandomQuestions(10);
     setQuestions(quizzes);
   }, []);
 
@@ -106,6 +106,13 @@ export default function QuizGameScreen() {
               </View>
             </View>
 
+            <ShareOptions
+              gameType="quiz"
+              score={score}
+              accuracy={Math.floor((score / 100) * 100)}
+              duration={Math.round((Date.now() - gameStartTime) / 1000)}
+            />
+
             <View className="w-full gap-3">
               <TouchableOpacity
                 onPress={() => router.push("/(tabs)/quiz")}
@@ -153,18 +160,34 @@ export default function QuizGameScreen() {
             </Text>
           </View>
 
-          {/* Answers */}
+          {/* Options */}
           <View className="gap-3">
-            {currentQuestion.options.map((option, index) => (
-              <AnswerButton
+            {currentQuestion.options.map((option: string, index: number) => (
+              <TouchableOpacity
                 key={index}
-                label={String.fromCharCode(65 + index)}
-                option={option}
-                isSelected={selectedAnswer === index}
-                isCorrect={index === currentQuestion.correctAnswer}
-                isSubmitted={isSubmitted}
                 onPress={() => handleSelectAnswer(index)}
-              />
+                className={`rounded-xl p-4 border-2 ${
+                  selectedAnswer === index
+                    ? isSubmitted
+                      ? index === currentQuestion.correctAnswer
+                        ? "bg-success border-success"
+                        : "bg-error border-error"
+                      : "bg-primary border-primary"
+                    : isSubmitted && index === currentQuestion.correctAnswer
+                      ? "bg-success border-success"
+                      : "bg-surface border-border"
+                }`}
+              >
+                <Text
+                  className={`text-base font-semibold ${
+                    selectedAnswer === index || (isSubmitted && index === currentQuestion.correctAnswer)
+                      ? "text-white"
+                      : "text-foreground"
+                  }`}
+                >
+                  {String.fromCharCode(65 + index)}. {option}
+                </Text>
+              </TouchableOpacity>
             ))}
           </View>
 
