@@ -1,0 +1,110 @@
+# EduPlay: L'Aventure Multimodale - TODO
+
+## Architecture & Configuration
+- [x] Générer et intégrer le logo de l'app
+- [x] Configurer le thème et les couleurs (design.md)
+- [x] Configurer app.config.ts avec le nom et les infos de l'app
+- [x] Mettre en place la structure des dossiers (screens, components, utils, hooks)
+
+## Écran d'Accueil
+- [x] Créer le layout principal avec navigation par onglets
+- [x] Afficher le logo et le titre de l'app
+- [x] Afficher les points totaux et le niveau actuel
+- [x] Créer les 4 cartes de jeux (Quiz, Maths, Plateforme, Réflexion)
+- [x] Ajouter les boutons Profil et Paramètres
+- [x] Implémenter la navigation vers chaque module
+
+## Module Quiz
+- [x] Créer la structure des données de quiz
+- [x] Afficher les questions à choix multiples
+- [x] Implémenter la logique de sélection de réponse
+- [x] Ajouter la barre de progression
+- [x] Implémenter la validation des réponses
+- [x] Ajouter les animations de feedback (correct/incorrect)
+- [x] Créer l'écran de résultats du quiz
+
+## Module Mathématiques
+- [x] Créer la structure des données de problèmes mathématiques
+- [x] Afficher les problèmes mathématiques
+- [x] Implémenter le clavier numérique personnalisé
+- [x] Ajouter le chronomètre
+- [x] Implémenter la validation des réponses
+- [x] Ajouter les animations de feedback
+- [x] Créer l'écran de résultats des maths
+
+## Module Plateforme (Mini-jeu)
+- [x] Créer le système de physique simple (gravité, saut)
+- [x] Implémenter le personnage animé
+- [x] Créer les obstacles et plateformes
+- [x] Ajouter les contrôles tactiles (gauche/droite/saut)
+- [x] Implémenter les collectibles (pièces, bonus)
+- [x] Ajouter le système de score et de temps
+- [x] Créer l'écran de fin de niveau
+
+## Module Réflexion & Logique
+- [x] Créer la structure des données d'énigmes
+- [x] Afficher les énigmes
+- [x] Implémenter le système de réponses (texte ou sélection)
+- [x] Ajouter le système d'indices
+- [x] Implémenter la validation des réponses
+- [x] Ajouter les explications de solutions
+- [x] Créer l'écran de résultats
+
+## Écran Résultats
+- [x] Créer le layout de résultats
+- [x] Afficher le score obtenu
+- [x] Afficher les points gagnés
+- [x] Afficher les statistiques (temps, précision, etc.)
+- [x] Ajouter les boutons Rejouer et Retour à l'accueil
+- [x] Implémenter la sauvegarde des résultats
+
+## Écran Profil
+- [x] Créer le layout du profil
+- [x] Afficher l'avatar utilisateur
+- [x] Afficher les statistiques globales
+- [x] Afficher les statistiques par module
+- [x] Implémenter le système de badges et réalisations
+- [x] Ajouter le bouton Éditer profil
+
+## Écran Paramètres
+- [x] Créer le layout des paramètres
+- [x] Ajouter le toggle Musique
+- [x] Ajouter le toggle Effets sonores
+- [x] Ajouter le réglage du volume
+- [x] Ajouter l'option Réinitialiser les données
+- [x] Ajouter la section À propos
+
+## Système de Musique & Effets Sonores
+- [x] Intégrer expo-audio
+- [x] Créer la musique de fond de l'app
+- [x] Ajouter les effets sonores pour les actions (clic, succès, erreur)
+- [x] Implémenter le contrôle du volume
+- [x] Implémenter le toggle musique/effets sonores
+- [x] Tester la lecture audio sur iOS et Android
+
+## Système de Points & Monétisation
+- [x] Implémenter le système de points
+- [x] Créer le système de niveaux
+- [x] Implémenter la sauvegarde des points et niveaux
+- [x] Créer le système de badges et réalisations
+- [x] Implémenter la structure pour les achats in-app (optionnel)
+
+## Persistance des Données
+- [x] Implémenter AsyncStorage pour sauvegarder les points
+- [x] Implémenter AsyncStorage pour sauvegarder les niveaux
+- [x] Implémenter AsyncStorage pour sauvegarder les statistiques
+- [x] Implémenter AsyncStorage pour sauvegarder les préférences (musique, volume)
+
+## Tests & Optimisation
+- [ ] Tester tous les modules de jeux
+- [ ] Tester la navigation entre les écrans
+- [ ] Tester la sauvegarde et la récupération des données
+- [ ] Optimiser les performances
+- [ ] Tester sur iOS et Android
+- [ ] Vérifier la compatibilité web
+
+## Déploiement
+- [ ] Créer un checkpoint final
+- [ ] Générer l'APK Android
+- [ ] Générer l'IPA iOS
+- [ ] Préparer pour la publication sur les stores
