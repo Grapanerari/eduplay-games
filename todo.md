@@ -117,3 +117,17 @@
 - [x] Implémenter la persistance de la langue préférée
 - [x] Tester toutes les écrans en français et portugais
 - [ ] Ajouter les traductions des données de jeux (quiz, maths, énigmes)
+
+
+## Amélioration de l'Interface (Attractivité & Téléchargements)
+- [x] Créer des gradients vibrantes pour les écrans
+- [x] Améliorer les cartes de jeux avec effets de sombres et animations
+- [x] Créer un écran d'onboarding attractif
+- [x] Ajouter des animations aux boutons (scale effect)
+- [x] Améliorer l'écran d'accueil avec design premium
+- [ ] Ajouter des animations d'entrée/sortie
+- [ ] Créer une barre de progression animée
+- [ ] Ajouter des confettis/animations de succès
+- [ ] Améliorer les transitions entre écrans
+- [ ] Ajouter des badges et récompenses visuelles
+- [ ] Créer des écrans de résultats plus spectaculaires
