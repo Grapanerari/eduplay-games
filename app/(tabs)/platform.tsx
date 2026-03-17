@@ -1,16 +1,41 @@
 import { ScrollView, Text, View, TouchableOpacity } from "react-native";
+import { useState } from "react";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
 import { useGame } from "@/lib/game-context";
 import { useLanguage } from "@/lib/language-context";
+import { useMonetization } from "@/lib/monetization-context";
+import { Paywall } from "@/components/paywall";
+import { AttemptsCounter } from "@/components/attempts-counter";
 
 export default function PlatformScreen() {
   const router = useRouter();
   const { stats } = useGame();
   const { t } = useLanguage();
+  const { useAttempt, upgradeToPremium } = useMonetization();
+  const [showPaywall, setShowPaywall] = useState(false);
+
+  const handleStartGame = () => {
+    if (useAttempt()) {
+      router.push("/(tabs)/platform-game");
+    } else {
+      setShowPaywall(true);
+    }
+  };
+
+  const handleUpgrade = () => {
+    upgradeToPremium();
+    setShowPaywall(false);
+  };
 
   return (
     <ScreenContainer className="p-6">
+      {showPaywall && (
+        <Paywall
+          onClose={() => setShowPaywall(false)}
+          onUpgrade={handleUpgrade}
+        />
+      )}
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View className="flex-1 gap-6">
           <View className="items-center gap-2">
@@ -21,6 +46,8 @@ export default function PlatformScreen() {
               {t("jumpAndCollect")}
             </Text>
           </View>
+
+          <AttemptsCounter onUpgradePress={() => setShowPaywall(true)} />
 
           <View className="bg-surface rounded-2xl p-6 border border-border">
             <Text className="text-lg font-semibold text-foreground mb-2">
@@ -38,7 +65,7 @@ export default function PlatformScreen() {
           </View>
 
           <TouchableOpacity
-            onPress={() => router.push("/(tabs)/platform-game")}
+            onPress={handleStartGame}
             className="bg-primary rounded-xl p-4 items-center mt-4"
           >
             <Text className="text-base font-semibold text-white">{t("startGame")}</Text>

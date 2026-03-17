@@ -141,6 +141,8 @@
 - [x] Implémenter la persistance des abonnements
 - [x] Créer la boutique de power-ups
 - [x] Ajouter les composants de compteur de tentatives
+- [x] Ajouter gating de monétisation à tous les modules de jeu
+- [x] Ajouter traductions multilingues pour monétisation
 - [ ] Intégrer Google AdMob (bannières et récompensées)
 - [ ] Tester les transactions
 - [ ] Configurer les analytics de monétisation

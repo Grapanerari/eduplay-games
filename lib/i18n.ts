@@ -92,6 +92,23 @@ export const translations = {
     // Time
     timeLeft: "Temps Restant",
     seconds: "s",
+
+    // Monetization
+    premium: "Premium",
+    unlimitedAttempts: "Tentatives Illimitées",
+    noAds: "Sans Publicités",
+    exclusiveContent: "Contenu Exclusif",
+    advancedMode: "Mode Avancé",
+    premiumThemes: "Thèmes Premium",
+    upgradeNow: "Mettre à Jour Maintenant",
+    continueForFree: "Continuer Gratuitement",
+    attemptsRemaining: "tentatives restantes aujourd'hui",
+    upgradeForUnlimited: "Mettez à jour pour des tentatives illimitées !",
+    shop: "Boutique",
+    buyPowerUps: "Achetez des power-ups pour améliorer votre performance",
+    purchased: "Acheté",
+    of: "de",
+    backHome: "Retour à l'Accueil",
   },
 
   pt: {
@@ -185,6 +202,23 @@ export const translations = {
     // Time
     timeLeft: "Tempo Restante",
     seconds: "s",
+
+    // Monetization
+    premium: "Premium",
+    unlimitedAttempts: "Tentativas Ilimitadas",
+    noAds: "Sem Anúncios",
+    exclusiveContent: "Conteúdo Exclusivo",
+    advancedMode: "Modo Avançado",
+    premiumThemes: "Temas Premium",
+    upgradeNow: "Fazer Upgrade Agora",
+    continueForFree: "Continuar Grátis",
+    attemptsRemaining: "tentativas restantes hoje",
+    upgradeForUnlimited: "Faça upgrade para tentativas ilimitadas!",
+    shop: "Loja",
+    buyPowerUps: "Compre power-ups para melhorar seu desempenho",
+    purchased: "Comprado",
+    of: "de",
+    backHome: "Voltar ao Início",
   },
 };
 
