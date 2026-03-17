@@ -108,3 +108,12 @@
 - [ ] Générer l'APK Android
 - [ ] Générer l'IPA iOS
 - [ ] Préparer pour la publication sur les stores
+
+
+## Système Multilingue (Français & Portugais)
+- [x] Créer le système de traduction i18n
+- [x] Traduire tous les textes en français et portugais
+- [x] Ajouter le sélecteur de langue dans les paramètres
+- [x] Implémenter la persistance de la langue préférée
+- [x] Tester toutes les écrans en français et portugais
+- [ ] Ajouter les traductions des données de jeux (quiz, maths, énigmes)

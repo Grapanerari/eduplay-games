@@ -2,25 +2,27 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
 import { useGame } from "@/lib/game-context";
+import { useLanguage } from "@/lib/language-context";
 
 export default function QuizScreen() {
   const router = useRouter();
   const { stats } = useGame();
+  const { t } = useLanguage();
 
   return (
     <ScreenContainer className="p-6">
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View className="flex-1 gap-6">
           <View className="items-center gap-2">
-            <Text className="text-3xl font-bold text-foreground">Quiz</Text>
+            <Text className="text-3xl font-bold text-foreground">{t("quiz")}</Text>
             <Text className="text-base text-muted">
-              Test your knowledge!
+              {t("testYourKnowledge")}
             </Text>
           </View>
 
           <View className="bg-surface rounded-2xl p-6 border border-border">
             <Text className="text-lg font-semibold text-foreground mb-2">
-              Your Best Score
+              {t("yourBestScore")}
             </Text>
             <Text className="text-4xl font-bold text-primary">
               {stats.quizHighScore}
@@ -29,7 +31,7 @@ export default function QuizScreen() {
 
           <View className="bg-surface rounded-2xl p-6 border border-border">
             <Text className="text-base text-muted">
-              Answer multiple choice questions and earn points!
+              {t("answerMultipleChoice")}
             </Text>
           </View>
 
@@ -37,7 +39,7 @@ export default function QuizScreen() {
             onPress={() => router.push("/(tabs)/quiz-game")}
             className="bg-primary rounded-xl p-4 items-center mt-4"
           >
-            <Text className="text-base font-semibold text-white">Start Quiz</Text>
+            <Text className="text-base font-semibold text-white">{t("startQuiz")}</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

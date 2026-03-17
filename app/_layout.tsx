@@ -9,6 +9,7 @@ import { Platform } from "react-native";
 import "@/lib/_core/nativewind-pressable";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { GameProvider } from "@/lib/game-context";
+import { LanguageProvider } from "@/lib/language-context";
 import {
   SafeAreaFrameContext,
   SafeAreaInsetsContext,
@@ -80,8 +81,9 @@ export default function RootLayout() {
   }, [initialInsets, initialFrame]);
 
   const content = (
-    <GameProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
+    <LanguageProvider>
+      <GameProvider>
+        <GestureHandlerRootView style={{ flex: 1 }}>
         <trpc.Provider client={trpcClient} queryClient={queryClient}>
           <QueryClientProvider client={queryClient}>
           {/* Default to hiding native headers so raw route segments don't appear (e.g. "(tabs)", "products/[id]"). */}
@@ -94,8 +96,9 @@ export default function RootLayout() {
           <StatusBar style="auto" />
           </QueryClientProvider>
         </trpc.Provider>
-      </GestureHandlerRootView>
-    </GameProvider>
+        </GestureHandlerRootView>
+      </GameProvider>
+    </LanguageProvider>
   );
 
   const shouldOverrideSafeArea = Platform.OS === "web";

@@ -2,10 +2,12 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
 import { useGame } from "@/lib/game-context";
+import { useLanguage } from "@/lib/language-context";
 
 export default function MathScreen() {
   const router = useRouter();
   const { stats } = useGame();
+  const { t } = useLanguage();
 
   return (
     <ScreenContainer className="p-6">
@@ -13,16 +15,16 @@ export default function MathScreen() {
         <View className="flex-1 gap-6">
           <View className="items-center gap-2">
             <Text className="text-3xl font-bold text-foreground">
-              Mathematics
+              {t("mathematics")}
             </Text>
             <Text className="text-base text-muted">
-              Solve problems quickly!
+              {t("solveProblemsFast")}
             </Text>
           </View>
 
           <View className="bg-surface rounded-2xl p-6 border border-border">
             <Text className="text-lg font-semibold text-foreground mb-2">
-              Your Best Score
+              {t("yourBestScore")}
             </Text>
             <Text className="text-4xl font-bold text-primary">
               {stats.mathHighScore}
@@ -31,7 +33,7 @@ export default function MathScreen() {
 
           <View className="bg-surface rounded-2xl p-6 border border-border">
             <Text className="text-base text-muted">
-              Solve math problems against the clock!
+              {t("solveMathProblems")}
             </Text>
           </View>
 
@@ -39,7 +41,7 @@ export default function MathScreen() {
             onPress={() => router.push("/(tabs)/math-game")}
             className="bg-primary rounded-xl p-4 items-center mt-4"
           >
-            <Text className="text-base font-semibold text-white">Start Challenge</Text>
+            <Text className="text-base font-semibold text-white">{t("startChallenge")}</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
