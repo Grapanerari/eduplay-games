@@ -8,6 +8,12 @@
         "buildType": "app-bundle",
         "releaseChannel": "production"
       }
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk",
+        "releaseChannel": "preview"
+      }
     }
   }
 }
