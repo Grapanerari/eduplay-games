@@ -16,6 +16,7 @@ const env = {
   scheme: schemeFromBundleId,
   iosBundleId: bundleId,
   androidPackage: bundleId,
+  projectId: "24b94fdf-ac9b-4d79-adc3-115c76748d32",
 };
 
 const config: ExpoConfig = {
@@ -100,6 +101,11 @@ const config: ExpoConfig = {
   experiments: {
     typedRoutes: true,
     reactCompiler: true,
+  },
+  extra: {
+    eas: {
+      projectId: "24b94fdf-ac9b-4d79-adc3-115c76748d32",
+    },
   },
 };
 
