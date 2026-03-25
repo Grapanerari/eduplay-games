@@ -11,6 +11,7 @@
 | **Target SDK** | 34 (Android 14) |
 | **Catégorie** | Games / Educational |
 | **Contenu** | Jeux éducatifs, Quiz, Mathématiques, Logique |
+| **Public Cible** | Toutes les âges (6+) |
 
 ---
 
@@ -131,16 +132,17 @@ Bem-vindo ao EduPlay, o aplicativo definitivo para amantes de jogos educativos! 
 | Contenu Violent | ❌ Non | App éducative, pas de violence |
 | Contenu Sexuel | ❌ Non | App familiale |
 | Contenu Offensant | ❌ Non | Contenu éducatif approprié |
-| Alcool/Tabac | ❌ Non | App pour tous les âges |
+| Alcool/Tabac | ❌ Non | App éducative pour tous |
+| Approprié pour enfants | ✅ Oui | Conçu pour toutes les âges (6+) |
+| Collecte de données personnelles | ❌ Non | Aucune donnée personnelle collectée |
 | Achats In-App | ✅ Oui | Premium + Power-ups |
 | Publicités | ✅ Oui | Bannières entre les jeux |
-| Données Personnelles | ✅ Oui | Stockage local uniquement |
 
 ---
 
 ## Politique de Confidentialité
 
-**Résumé:** EduPlay collecte uniquement les données de jeu stockées localement sur votre appareil. Aucune donnée personnelle n'est envoyée à des serveurs externes. Les données d'analytics sont anonymes et utilisées uniquement pour améliorer l'expérience utilisateur.
+**Résumé:** EduPlay ne collecte AUCUNE donnée personnelle identifiable (email, nom, téléphone). Toutes les données de jeu sont stockées localement sur votre appareil. Les données d'analytics sont complètement anonymes et utilisées uniquement pour améliorer l'expérience utilisateur. L'app est conforme à COPPA (Children's Online Privacy Protection Act), GDPR et aux lois de protection des données internationales.
 
 ---
 

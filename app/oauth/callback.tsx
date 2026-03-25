@@ -47,8 +47,7 @@ export default function OAuthCallback() {
               const userInfo: Auth.User = {
                 id: userData.id,
                 openId: userData.openId,
-                name: userData.name,
-                email: userData.email,
+                // name and email intentionally excluded for COPPA/GDPR compliance
                 loginMethod: userData.loginMethod,
                 lastSignedIn: new Date(userData.lastSignedIn || Date.now()),
               };
@@ -198,8 +197,7 @@ export default function OAuthCallback() {
             const userInfo: Auth.User = {
               id: result.user.id,
               openId: result.user.openId,
-              name: result.user.name,
-              email: result.user.email,
+              // name and email intentionally excluded for COPPA/GDPR compliance
               loginMethod: result.user.loginMethod,
               lastSignedIn: new Date(result.user.lastSignedIn || Date.now()),
             };

@@ -29,8 +29,7 @@ export function useAuth(options?: UseAuthOptions) {
           const userInfo: Auth.User = {
             id: apiUser.id,
             openId: apiUser.openId,
-            name: apiUser.name,
-            email: apiUser.email,
+            // name and email intentionally excluded for COPPA/GDPR compliance
             loginMethod: apiUser.loginMethod,
             lastSignedIn: new Date(apiUser.lastSignedIn),
           };

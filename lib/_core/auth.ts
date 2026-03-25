@@ -5,8 +5,7 @@ import { SESSION_TOKEN_KEY, USER_INFO_KEY } from "@/constants/oauth";
 export type User = {
   id: number;
   openId: string;
-  name: string | null;
-  email: string | null;
+  // NOTE: name and email removed for COPPA/GDPR compliance - no personal data collection
   loginMethod: string | null;
   lastSignedIn: Date;
 };
